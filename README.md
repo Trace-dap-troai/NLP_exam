@@ -22,7 +22,7 @@ graph TD
 
     subgraph Core Reasoning & Executive Interface Tier
         CDB -->|Multi-Query Semantic Context Search| RE
-        RE -->|Structured JSON Prompt + Context Injections| LLM[Ollama Local: Gemma 3 (4B)]
+        RE -->|Structured JSON Prompt + Context Injections| LLM["Ollama Local: Gemma 3 (4B)"]
         LLM -->|Raw JSON Text Block| RE
         RE -->|Regex Text Sanitizer & Strict Parse Guard| CACHE[bmw_cached_report.json]
         CACHE -->|Sub-second Fast Load Interface Optimization| APP[app.py - Streamlit Dashboard]
