@@ -93,10 +93,10 @@ The infrastructure fully satisfies the strict project requirements of using open
 
 The system operates a continuous data processing cycle broken down into four foundational stages:
 
-1.  **Text Sanitization & Identity Mapping:** Eradicates messy web tags, metadata, and cross-site scripts. The pipeline enforces deterministic token assignments using `MD5 hashes` derived from the source URL. This guarantees zero duplicate mutations in historical analytical tracking.
-2.  **Quantitative Sentiment Profiling:** Dynamically weights contextual fragments to assign positive or negative polarity values. This allows the executive board to evaluate brand health, competitor shifts, and public reception in real time.
-3.  **Contextual Multi-Query RAG:** Rather than firing a generalized query string which reduces similarity matches, the system splits semantic context retrieval into targeted vector segments: Opportunities, Strategic supply chain vulnerabilities, and Competitor maneuvers (e.g., Tesla, Mercedes, Audi). These independent segments are then consolidated to provide highly enriched, hyper-focused context payloads to the LLM.
-4.  **JSON Enforcement & Grammar Shielding:** Deploys a regex isolation layer `r"\{.*\}"` to capture JSON blocks out of the LLM's conversational text return. The extracted string is parsed using `json.loads(..., strict=False)` to prevent structural crashes caused by system-generated newline characters or tab blocks.
+1. **Text Sanitization & Identity Mapping:** Eradicates messy web tags, metadata, and cross-site scripts. The pipeline enforces deterministic token assignments using `MD5 hashes` derived from the source URL. This guarantees zero duplicate mutations in historical analytical tracking.
+2. **Quantitative Sentiment Profiling:** Dynamically weights contextual fragments to assign positive or negative polarity values. This allows the executive board to evaluate brand health, competitor shifts, and public reception in real time.
+3. **Contextual Multi-Query RAG:** Rather than firing a generalized query string which reduces similarity matches, the system splits semantic context retrieval into targeted vector segments: Opportunities, Strategic supply chain vulnerabilities, and Competitor maneuvers (e.g., Tesla, Mercedes, Audi). These independent segments are then consolidated to provide highly enriched, hyper-focused context payloads to the LLM.
+4. **JSON Enforcement & Grammar Shielding:** Deploys a regex isolation layer `r"\{.*\}"` to capture JSON blocks out of the LLM's conversational text return. The extracted string is parsed using `json.loads(..., strict=False)` to prevent structural crashes caused by system-generated newline characters or tab blocks.
 
 ---
 
