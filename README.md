@@ -1,4 +1,5 @@
 # <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" width="35" height="35"> BMW AI CEO Agent - Strategic Intelligence System
+
 This repository contains the full production-ready implementation of an AI-powered Strategic Intelligence System tailored for the Executive Board and the CEO of the BMW Group. The system automatically ingests, processes, and analyzes real-time multi-source market and financial data, extracts semantic sentiments, and leverages a localized Retrieval-Augmented Generation (RAG) framework to deliver deep corporate insights and actionable boardroom directives backed by granular evidence.
 
 ---
@@ -21,7 +22,7 @@ graph TD
 
     subgraph Core Reasoning & Executive Interface Tier
         CDB -->|Multi-Query Semantic Context Search| RE
-        RE -->|Structured JSON Prompt + Context Injections| LLM[Ollama Local: Gemma 3 / Llama 3.1]
+        RE -->|Structured JSON Prompt + Context Injections| LLM[Ollama Local: Gemma 3 (4B)]
         LLM -->|Raw JSON Text Block| RE
         RE -->|Regex Text Sanitizer & Strict Parse Guard| CACHE[bmw_cached_report.json]
         CACHE -->|Sub-second Fast Load Interface Optimization| APP[app.py - Streamlit Dashboard]
@@ -79,7 +80,7 @@ sequenceDiagram
 
 The infrastructure fully satisfies the strict project requirements of using open-source, non-commercial, localized AI architectures:
 
-* **Core Reasoning Engine:** `Gemma 3 (4B)` / `Llama 3.1 (8B)` hosted locally via Ollama.
+* **Core Reasoning Engine:** `Gemma 3 (4B)` hosted locally via Ollama.
 * **Vector Embedding Model:** `SentenceTransformers (all-MiniLM-L6-v2)` – Delivering exceptional speed and dense semantic mapping.
 * **Knowledge Repository Database:** `ChromaDB (Persistent Client)` – High-performance embedded vector storage to preserve cross-session indices.
 * **Sentiment Classifier:** `DistilBERT (distilbert-base-uncased-finetuned-sst-2-english)` via HuggingFace Transformers, integrated with native token truncation guards fixed at a 512-token limit.
